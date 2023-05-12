@@ -20,5 +20,15 @@ public class Student {
     String nationalityId;
     List<Book> books;
 
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                ", nationalityId='" + nationalityId + '\'' +
+                ", books=" + books +
+                '}';
+    }
 }

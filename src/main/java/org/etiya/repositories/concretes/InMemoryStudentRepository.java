@@ -12,12 +12,23 @@ public class InMemoryStudentRepository implements StudentRepository {
 
     @Override
     public void add(Student entity) {
-
+        studentList.add(entity);
     }
 
     @Override
     public void update(Student entity) {
-
+        Student studentToUpdate = studentList
+                .stream()
+                .filter(student -> student.getId() == entity.getId())
+                .findFirst()
+                .orElse(null);
+        studentList.removeIf(studentToUpdate::equals);
+        studentToUpdate.setName(entity.getName());
+        studentToUpdate.setAge(entity.getAge());
+        studentToUpdate.setSurname(entity.getSurname());
+        studentToUpdate.setNationalityId(entity.getNationalityId());
+        studentToUpdate.setBooks(entity.getBooks());
+        studentList.add(studentToUpdate);
     }
 
     @Override
@@ -32,6 +43,6 @@ public class InMemoryStudentRepository implements StudentRepository {
 
     @Override
     public List<Student> getAll() {
-        return null;
+        return studentList;
     }
 }

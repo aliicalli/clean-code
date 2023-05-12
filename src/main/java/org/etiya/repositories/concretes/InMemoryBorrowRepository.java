@@ -12,7 +12,7 @@ public class InMemoryBorrowRepository implements BorrowRepository {
 
     @Override
     public void add(Borrow entity) {
-
+        borrowList.add(entity);
     }
 
     @Override
@@ -32,6 +32,6 @@ public class InMemoryBorrowRepository implements BorrowRepository {
 
     @Override
     public List<Borrow> getAll() {
-        return null;
+        return borrowList;
     }
 }

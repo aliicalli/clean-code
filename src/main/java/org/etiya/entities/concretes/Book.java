@@ -16,8 +16,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Book
-{
+public class Book {
     int id;
     String name;
     int pageCount;
@@ -33,6 +32,3 @@ public class Book
                 '}';
     }
 }
-
-// public boolean checkBookWithName(String name);
-// public boolean checkIfBookExistsWithSameName(String name);

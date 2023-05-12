@@ -26,7 +26,7 @@ public class AuthorManager implements AuthorService {
 
     @Override
     public void update(Author entity) {
-       authorRepository.update(entity);
+        authorRepository.update(entity);
     }
 
     @Override
@@ -45,10 +45,9 @@ public class AuthorManager implements AuthorService {
     }
 
     public void checkIfAuthorWithSameNationalityIdExists(String nationalityId) {
-        if(authorRepository.getAuthorByNationalityIdentity(nationalityId) != null){
+        if (authorRepository.getAuthorByNationalityIdentity(nationalityId) != null) {
             System.out.println("Bu TCKN ile bir author zaten mevcut..");
             Thread.currentThread().stop();
         }
     }
 }
-//15.10

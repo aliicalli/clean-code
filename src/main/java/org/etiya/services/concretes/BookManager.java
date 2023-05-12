@@ -3,14 +3,13 @@ package org.etiya.services.concretes;
 
 import org.etiya.entities.concretes.Book;
 import org.etiya.repositories.abstracts.BookRepository;
-import org.etiya.services.abstracts.AuthorService;
 import org.etiya.services.abstracts.BookService;
 
 import java.util.List;
 
 public class BookManager implements BookService {
 
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
     public BookManager(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
@@ -19,10 +18,8 @@ public class BookManager implements BookService {
 
     @Override
     public void add(Book entity) {
-
         bookRepository.add(entity);
-        System.out.println("Author eklendi.");
-
+        System.out.println("Book eklendi.");
     }
 
     @Override
